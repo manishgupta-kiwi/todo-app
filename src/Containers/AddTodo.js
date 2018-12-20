@@ -27,7 +27,7 @@ class AddTodo extends Component{
         
     }
     render(){
-        console.log(this.state.isDisabled);
+       
 
         return(
             <div className="row">
