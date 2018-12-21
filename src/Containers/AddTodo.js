@@ -31,10 +31,11 @@ class AddTodo extends Component{
 
         return(
             <div className="row">
-            <div className="input-field col s10">
+            <div className="input-field col s7">
               <input id="first_name2" type="text" className="validate" onChange={this.changeHandler} style={{color:'white',fontSize:'2rem'}}/>
             </div>
             <div className="col s2"><button className='btn-floating btn-large waves-effect waves-light red' onClick={this.addHandler} id='addbutton'><i className="material-icons">add</i></button></div>
+            <div className="col s3"><button id='deleteall' className='btn btn-large waves-effect waves-light' onClick={this.props.deleteAll} style={{borderRadius:'25px'}}> Delete All</button></div>
           </div>
         )
     }

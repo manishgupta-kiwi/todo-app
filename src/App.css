@@ -60,10 +60,10 @@
   border-bottom: 20px solid transparent;
 }
 
- body{
-  background: linear-gradient(to right bottom, #000000, #111111);
- }
-
+#deleteall{
+  background-color: #080808;
+  border:2px dotted rgb(53, 53, 53);
+}
 
 
  .card-panel{
@@ -86,9 +86,14 @@
     left: 15%;
     top: 30%;
     box-sizing: border-box;
-    
     text-align: center;
     font-family: cursive;
+    
+    -webkit-filter: blur(0.5px);
+        -moz-filter: blur(0.5px);
+        -o-filter: blur(0.5px);
+        -ms-filter: blur(0.5px);
+        filter: blur(0.5px);
     
 }
 
@@ -106,4 +111,19 @@
   margin:10px;
   border-radius: 10px;
   background-color: rgb(248, 124, 124);
+}
+
+#backdrop{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.534);
+  -webkit-filter: blur(4px);
+      -moz-filter: blur(4px);
+      -o-filter: blur(4px);
+      -ms-filter: blur(4px);
+      filter: blur(4px);
 }

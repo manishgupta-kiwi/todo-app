@@ -1,5 +1,7 @@
 import React from "react";
 import Deletemodal from "./modal/Deletemodal";
+import Backdrop from "./modal/Backdrop";
+
 // import './TodoViewer.css';
 
 
@@ -13,15 +15,17 @@ const TodoViewer = props => {
     }
     
   return (
+
+   
     <div><div className=" card-panel z-depth-4" style={{borderRadius:'25px',textShadow: '0px 0px  6px rgba(255,255,255,0.5) '}}>
     <div className="row">
       <div className="col s6">
-      <h5 className=" grey-text darken-3" id="linethrough" style={{
+      <h5 className=" grey-text darken-3" id="linethrough"   style={{
         textDecoration: props.status==='completed' ? 'line-through' : 'none',
         textDecorationStyle:'wavy',
         textDecorationColor:'red'
         
-      }}>{props.task}</h5>
+      }} contentEditable="true">{props.task}</h5>
       </div>
       
       <div className="col s2"><button className="waves-effect waves-red btn-large" style={{borderRadius:'25px',textShadow: '0px 0px  6px rgba(255,255,255,1)'}}
@@ -35,7 +39,9 @@ const TodoViewer = props => {
   </div>
   
   {(props.showDeleteModal===true)?<Deletemodal hide={props.hide} id={props.id} delete={props.delete} />:null}
+  {(props.showDeleteModal===true)?<Backdrop hide={props.hide} />:null}
   </div>
+  
     
   );
 };

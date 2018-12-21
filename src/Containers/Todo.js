@@ -6,15 +6,25 @@ import TodoStatusViewer from "../Components/TodoStatusViewer";
 class Todo extends Component {
   state = {
     todos: [
-      { id: 1, task: "eating", status: "active" },
-      { id: 2, task: "bathing", status: "active" },
-      { id: 3, task: "drinking", status: "active" }
+      { id: 1, task: "add new to-do", status: "active" },
+      
+      
     ],
     totalTask: 0,
     activeTask: 0,
     completedTask: 0,
     showDeleteModal: false
   };
+
+  deleteAllHAndler=()=>{
+      this.setState({
+          todos:[],
+          totalTask:0,
+          activeTask:0,
+          completedTask:0,
+          showDeleteModal:false
+      })
+  }
 
   componentWillMount() {
     let active_count = 0;
@@ -135,7 +145,7 @@ class Todo extends Component {
           completed={this.state.completedTask}
         />
         <div className="container">
-          <AddTodo add={this.addTodoHandler} />
+          <AddTodo add={this.addTodoHandler}  deleteAll={this.deleteAllHAndler}/>
         </div>
         <div className="container">{td}</div>
         {/* {(this.state.showDeleteModal===true)?<Deletemodal hide={this.hideModal}/>:null} */}
